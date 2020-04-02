@@ -471,20 +471,23 @@ export class LayoutPageComponent implements OnInit {
    * 添加倾斜摄影模型
    */
   addTPModel() {
-    const tile3d = new Cesium.Cesium3DTileset({ url: config.mapConfig.gturl });
-    tile3d.style = new Cesium.Cesium3DTileStyle({
-      color: {
-        conditions: [
-          ['${height} >= 100', 'color("purple", 0.5)'],
-          ['${height} >= 50', 'color("red")'],
-          ['true', 'color("blue")']
-        ]
-      },
-      show: '${height} > 0',
-      meta: {
-        description: '"Building id ${id} has height ${height}."'
-      }
-    });
+    // 添加矢量建筑物3dtiles瓦片
+    // const tile3d = new Cesium.Cesium3DTileset({ url: config.mapConfig.buildingsUrl });
+    // tile3d.style = new Cesium.Cesium3DTileStyle({
+    //   color: {
+    //     conditions: [
+    //       ['${height} >= 100', 'color("purple", 0.5)'],
+    //       ['${height} >= 50', 'color("red")'],
+    //       ['true', 'color("blue")']
+    //     ]
+    //   },
+    //   show: '${height} > 0',
+    //   meta: {
+    //     description: '"Building id ${id} has height ${height}."'
+    //   }
+    // });
+    // 添加大雁塔倾斜摄影模型3dtiles瓦片
+    const tile3d = new Cesium.Cesium3DTileset({ url: config.mapConfig.dayantaUrl });
     this.TPModel = this.viewer.scene.primitives.add(tile3d);
     this.TPModel.readyPromise.then(() => {
       const boundingSphere = this.TPModel.boundingSphere;
