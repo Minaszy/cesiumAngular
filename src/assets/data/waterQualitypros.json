@@ -1,0 +1,283 @@
+{
+  "type" : "FeatureCollection",
+  "crs" : {
+    "type" : "name",
+    "properties" : {
+      "name" : "EPSG:4326"
+    }
+  },
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.4515851540001,
+          31.289722229000063
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 1,
+        "name" : null,
+        "color" : null,
+        "type" : "违章搭建"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 2,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45210802100007,
+          31.289890623000076
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 2,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 3,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45250705700005,
+          31.289968907000059
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 3,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 4,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45105154100008,
+          31.289666002000047
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 4,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 5,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.4508546400001,
+          31.289718945000061
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 5,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 6,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.4512764000001,
+          31.289761775000045
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 6,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 7,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45011879100002,
+          31.28969752900008
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 7,
+        "name" : null,
+        "color" : null,
+        "type" : "水域保洁"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 8,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45029427700001,
+          31.289701099000069
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 8,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 9,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.44961732000002,
+          31.289521449000063
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 9,
+        "name" : null,
+        "color" : null,
+        "type" : "违章搭建"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 10,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.44811945000004,
+          31.289233534000061
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 10,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 13,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45309510100003,
+          31.290053854000064
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 13,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 14,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45304346600005,
+          31.28995344100008
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 14,
+        "name" : null,
+        "color" : null,
+        "type" : "陆域保洁"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 15,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45126410500006,
+          31.289657674000068
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 15,
+        "name" : null,
+        "color" : null,
+        "type" : "陆域保洁"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 16,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.45092384300006,
+          31.289568444000054
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 16,
+        "name" : null,
+        "color" : null,
+        "type" : "违章施工"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 17,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.44975493200002,
+          31.289602946000059
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 17,
+        "name" : null,
+        "color" : null,
+        "type" : "水质问题"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 19,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          121.44740937900008,
+          31.289136572000075
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 19,
+        "name" : null,
+        "color" : null,
+        "type" : "违章搭建"
+      }
+    }
+  ]
+}
