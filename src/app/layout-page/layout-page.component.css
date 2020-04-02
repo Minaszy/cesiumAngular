@@ -1,0 +1,124 @@
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.trigger:hover {
+    color: #1890ff;
+}
+
+#cesiumContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+    text-align: center;
+}
+
+.logo-name {
+    color: #fff;
+    font-family: LiSu;
+    font-size: 2em;
+    line-height: 32px;
+}
+
+.diqiu {
+    width: 2.3em;
+    line-height: 32px;
+}
+
+.ant-layout {
+    height: 100%;
+}
+
+.river-info {
+    width: 250px;
+    top: 70px;
+    right: 10px;
+    position: absolute;
+    background-color: #292a316b;
+}
+
+::ng-deep .ant-collapse>.ant-collapse-item>.ant-collapse-header {
+    color: #fff;
+}
+
+::ng-deep .ant-collapse {
+    background-color: #ffffff00;
+    color: #fff;
+}
+
+::ng-deep.ant-collapse-content {
+    background-color: #ffffff00;
+    color: #fff;
+}
+
+::ng-deep .ant-collapse {
+    background-color: #ffffff00;
+    color: #fff;
+}
+
+.patrol {
+    background: rgb(165, 65, 65);
+    color: #fff;
+    padding: 7px;
+    border-radius: 3px;
+    /* margin: 0 auto; */
+    margin-left: 735px;
+}
+
+#infoWindow1 {
+    display: none;
+    /* user-select: none;
+    pointer-events: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 250px;
+    z-index: 99999;
+}
+
+#infoWindow {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    right: 0;
+    bottom: 100px;
+    display: none;
+    background-image: url(../../assets/img/layer_border.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    color: #ffff00;
+}
+
+#infoLine {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 100px;
+    bottom: 0;
+    display: none;
+    background-image: url(../../assets/img/line.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.infospan {
+    padding-left: 80px;
+}
+
+.infoimg {
+    width: 230px;
+    height: 120px;
+    padding-left: 40px;
+}

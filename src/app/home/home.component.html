@@ -1,0 +1,66 @@
+<div class="home">
+    <div id="cesiumContainer"></div>
+
+    <div class="navigation">
+        <button nz-button [nzType]="'primary'" (click)="toggleCollapsed()" style="margin-bottom: 10px;">
+        <i nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+      </button>
+        <ul nz-menu [nzMode]="'inline'" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
+            <li nz-submenu>
+                <span title>
+                    <i nz-icon nzType="exclamation-circle" nzTheme="fill"></i>
+                    <span>巡查问题</span>
+                </span>
+                <ul>
+                    <li nz-menu-item>水域保洁</li>
+                    <li nz-menu-item>陆域保洁</li>
+                    <li nz-submenu>
+                        <span title>涉河监管事项</span>
+                        <ul>
+                            <li nz-menu-item>违章施工</li>
+                            <li nz-menu-item>违章搭建</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title>
+            <i nz-icon nzType="database" nzTheme="fill"></i>
+            <span>巡查事件</span>
+                </span>
+                <ul>
+                    <li nz-menu-item>Option 5</li>
+                    <li nz-menu-item>Option 6</li>
+                    <li nz-submenu>
+                        <span title>Submenu</span>
+                        <ul>
+                            <li nz-menu-item>Option 7</li>
+                            <li nz-menu-item>Option 8</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title>
+            <i nz-icon nzType="dashboard" nzTheme="fill"></i>
+            <span>河道水质</span>
+                </span>
+                <ul>
+                    <li nz-menu-item>氨氮</li>
+                    <li nz-menu-item>溶解氧</li>
+                    <li nz-menu-item>温度</li>
+                    <li nz-menu-item>透明度</li>
+                </ul>
+            </li>
+            <li nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'Navigation One' : ''">
+                <span title>
+            <i nz-icon nzType="eye" nzTheme="fill"></i>
+            <span>河底地形</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <button class="info" nz-button nzType="primary">基础信息</button>
+
+</div>

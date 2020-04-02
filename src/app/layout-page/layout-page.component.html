@@ -1,0 +1,86 @@
+<nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+        <div class="logo">
+            <!-- <img class="diqiu" src="../assets/img/diqiu.png"> -->
+            <span *ngIf="!isCollapsed" class="logo-name">立体巡河</span>
+        </div>
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+            <li nz-submenu>
+                <span title>
+          <i nz-icon nzType="database" nzTheme="fill"></i>
+          <span>巡查事件</span>
+                </span>
+                <ul>
+                    <li nz-menu-item (click)="flytoMayibang()">蚂蚁浜</li>
+                    <li nz-menu-item (click)="flytoTest()">蕰藻浜</li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title>
+          <i nz-icon nzType="exclamation-circle" nzTheme="fill"></i>
+          <span>巡查问题</span>
+                </span>
+                <ul>
+                    <!-- <li nz-menu-item (click)="roaming(pwk)">排污口（<span style="color: #ff0000;">1</span>）</li> -->
+                    <li nz-menu-item (click)="roaming(waterCleanData)">水域保洁（<span style="color: #ff0000;">1</span>）</li>
+                    <li nz-menu-item (click)="roaming(landCleanData)">陆域保洁（<span style="color: #ff0000;">2</span>）</li>
+                    <li nz-menu-item (click)="roaming(riverAboutData)">涉河监管事项（<span style="color: #ff0000;">4</span>）</li>
+                </ul>
+            </li>
+
+            <li nz-submenu>
+                <span title>
+          <i nz-icon nzType="dashboard" nzTheme="fill"></i>
+          <span>水质问题</span>
+                </span>
+                <ul>
+                    <li nz-menu-item>氨氮（<span style="color: #ff0000;">1</span>）</li>
+                    <li nz-menu-item>溶解氧（<span style="color: #ff0000;">1</span>）</li>
+                    <li nz-menu-item>温度（<span style="color: #ff0000;">1</span>）</li>
+                    <li nz-menu-item>透明度（<span style="color: #ff0000;">1</span>）</li>
+                </ul>
+            </li>
+            <li nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'Navigation One' : ''" (click)="showUnderGround()">
+                <span title>
+          <i nz-icon nzType="eye" nzTheme="fill"></i>
+          <span>河底地形</span>
+                </span>
+            </li>
+            <li nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'Navigation One' : ''" (click)="show3Dtiles()">
+                <span title>
+          <i nz-icon nzType="bank" nzTheme="fill"></i>
+          <!-- <i nz-icon nzType="codepen-circle" nzTheme="fill"></i> -->
+          <span>倾斜摄影模型</span>
+                </span>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header style="background: #1E4E7F; padding:0;">
+            <i class="trigger" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
+            <span class="patrol">{{patrolName}}巡查</span>
+            <nz-avatar [nzText]="text" nzSize="normal" [ngStyle]="{ 'background-color': '#00a2ae' }" style="vertical-align: middle;left: 45%;"></nz-avatar>
+        </nz-header>
+        <div id="cesiumContainer"></div>
+        <div id="infoWindow1" (mouseenter)="mouseOverfun()">
+            <div id="infoWindow">
+                <span class="infospan">问题类型：{{infodata}}</span><br>
+                <!-- <img class="infoimg" src="assets/img/pro2.png" /> -->
+            </div>
+            <div id="infoLine"></div>
+        </div>
+
+        <nz-collapse nzAccordion class="river-info">
+            <nz-collapse-panel class="infopanel" [nzHeader]="panel.name" [nzActive]="panel.active">
+                <!-- <p>{{ panel.name }} content</p> -->
+                <div nz-row *ngFor="let info of riverInfo[0];index as i;">
+                    <div nz-col nzSpan="12">{{info}}&nbsp;:</div>
+                    <div nz-col nzSpan="12">{{riverInfo[1][i]}}</div>
+                </div>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </nz-layout>
+</nz-layout>
+<ng-template #trigger>
+    <i nz-icon type="up"></i>
+</ng-template>
