@@ -136,12 +136,20 @@ export class LayoutPageComponent implements OnInit {
       const lat = Cesium.Math.toDegrees(cartographic.latitude);
       const obj = this.viewer.scene.pick(event.position);
       if (Cesium.defined(obj)) {
-        console.log(obj.id.properties.type);
-        // const str = obj.id._name;
-        // if (str === "yscNoNeedEntity")
-        //   return;
-        // callback(obj.id._id);
-        this.showInfoWindow(lon, lat, obj.id.properties.type);
+        if (obj.id && obj.id.properties) { // 点击建筑物等获取属性
+          console.log(obj.id.properties.type);
+          // const str = obj.id._name;
+          // if (str === "yscNoNeedEntity")
+          //   return;
+          // callback(obj.id._id);
+          this.showInfoWindow(lon, lat, obj.id.properties.type);
+        } else {// 点击3dtiles获取属性；
+          // console.log(obj.getPropertyNames()); // 点击3dtiles获取属性字段；
+          alert(obj.getProperty('name')); // 点击建筑物获取属性值；
+          // alert(obj.getProperty('name'));
+          obj.color = Cesium.Color.BLUE.withAlpha(0.5);
+        }
+
       } else {
         this.hideInfoWindow();
       }
@@ -505,7 +513,7 @@ export class LayoutPageComponent implements OnInit {
       classificationType: Cesium.ClassificationType.CESIUM_3D_TILE
     });
     tile3dClass.style = new Cesium.Cesium3DTileStyle({
-      color: 'rgba(255, 0, 0, 0.5)'
+      color: 'rgba(255, 0, 0, 0.01)'
     });
     this.TPModelClass = this.viewer.scene.primitives.add(tile3dClass);
   }
