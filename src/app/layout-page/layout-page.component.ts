@@ -37,6 +37,7 @@ export class LayoutPageComponent implements OnInit {
   pointJson: any;
   flagTimer: any;
   TPModel: any;
+  TPModelClass: any;
   infodata: any;
   @ViewChild('trigger') customTrigger: TemplateRef<void>;
   constructor(private apiService: ApiService) { }
@@ -498,6 +499,15 @@ export class LayoutPageComponent implements OnInit {
     }).otherwise((error) => {
       throw (error);
     });
+    // 添加大雁塔矢量分类
+    const tile3dClass = new Cesium.Cesium3DTileset({
+      url: config.mapConfig.dayataclassifyUrl2, // 有问题的示例config.mapConfig.dayataclassifyUrl2
+      classificationType: Cesium.ClassificationType.CESIUM_3D_TILE
+    });
+    tile3dClass.style = new Cesium.Cesium3DTileStyle({
+      color: 'rgba(255, 0, 0, 0.5)'
+    });
+    this.TPModelClass = this.viewer.scene.primitives.add(tile3dClass);
   }
 
   show3Dtiles() {
