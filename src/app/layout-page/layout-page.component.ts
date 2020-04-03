@@ -82,7 +82,9 @@ export class LayoutPageComponent implements OnInit {
 
     this.viewer._cesiumWidget._creditContainer.style.display = 'none';
     // this.viewer.imageryLayers.remove(this.viewer.imageryLayers.get(0));
-
+    // 开启光照效果
+    this.viewer.scene.globe.enableLighting = true;
+    this.viewer.shadows = true;
     // 增加谷歌影像底图
     this.baseMap = this.viewer.imageryLayers.addImageryProvider(googleLayer);
     // console.log(this.viewer.imageryLayers.length);
