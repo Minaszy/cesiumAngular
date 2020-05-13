@@ -1,0 +1,9 @@
+{
+    "/api": {
+        "target": "https://scene.natural-resources.net.cn",
+        "secure": false,
+        "pathRewrite": { "^/api": "" },
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
