@@ -48,6 +48,7 @@ export class LayoutPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(Cesium);
     this.initCesium();
     // this.addWaterFace();
     this.addUnderWaterShape();
@@ -110,11 +111,27 @@ export class LayoutPageComponent implements OnInit {
     this.addRedLine();
     this.addBuildings();
     this.addBuildings1();
-    // this.addTPModel();
+    this.addTPModel();
+    // 添加海永镇倾斜摄影数据
+    this.addHY();
     this.addEvt();
 
   }
 
+  addHY() {
+
+    const imagetile = new Cesium.Cesium3DTileset({ url: "/api/Scene/tiles.json" });
+    this.TPModel = this.viewer.scene.primitives.add(imagetile);
+    this.TPModel.readyPromise.then(() => {
+      const boundingSphere = this.TPModel.boundingSphere;
+      this.viewer.scene.camera.viewBoundingSphere(boundingSphere, new Cesium.HeadingPitchRange(0.0, -0.5, boundingSphere.radius));
+      this.viewer.scene.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+      // this.viewer.scene.globe.globeAlpha = 0;
+      // tile3d.show = false;
+    }).otherwise((error) => {
+      throw (error);
+    });
+  }
   flytoShangHai() {
     this.viewer.scene.camera.flyTo({
       destination: Cesium.Rectangle.fromDegrees(121.44672084220201, 31.28868194981397, 121.45407791350203, 31.29060935499095),
@@ -122,7 +139,7 @@ export class LayoutPageComponent implements OnInit {
   }
 
   addRiverDom() {
-    const urlTemplateImageryProvider = this.viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
+    const urlTemplateImagery = this.viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
       url: config.mapConfig.patrol_myb_20190626,
       rectangle: Cesium.Rectangle.fromDegrees(121.44672084220201, 31.28868194981397, 121.45407791350203, 31.29060935499095)
     }));
@@ -251,6 +268,7 @@ export class LayoutPageComponent implements OnInit {
     this.apiService.getWaterQualityPro()
       .subscribe((data: any) => {
         if (data) {
+          console.log(JSON.stringify(data));
           data.features.forEach((fea, i) => {
             if (fea.properties.type !== '水质问题') {
               if (fea.properties.type === '水域保洁') {
